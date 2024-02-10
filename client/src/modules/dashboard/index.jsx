@@ -36,6 +36,7 @@ const Dashboard=()=>{
     const [messages,setMessages]=useState({});
     const [message,setMessage]=useState('');
     const [socket,setSocket]=useState(null);
+    const [currentConversation,setConv]=useState(null);
     //to fetch all the user from the database
     const [users,setUsers]=useState([]);
     const messageRef=useRef()
@@ -67,6 +68,7 @@ const Dashboard=()=>{
     console.log('user->',user);
     console.log('messages->',messages);
     console.log('current users->',users);
+    console.log('conversations->',Conversations);
 
     //use effect to get all user data
     useEffect(()=>{
@@ -92,6 +94,7 @@ const Dashboard=()=>{
                 'Content-Type':'application/json'
             },
         })
+        setConv(conversationId);
         const resdata=await res.json();
         console.log('resdata->>',resdata,"conversationId-",conversationId);
         if(resdata.length>0){
@@ -179,7 +182,7 @@ const Dashboard=()=>{
                     <div className="">
                         {
                             messages?.messages?.length>0?
-                            messages.messages.map(({message,user:{_id,id}={}})=>{
+                            messages.messages.map(({message,user:{id,convid}={}})=>{
                                 if(id===user?._id)
                                 {
                                     return(
@@ -192,6 +195,8 @@ const Dashboard=()=>{
                                     )
                                 }
                                 else{
+                                    console.log("currrent---------->",convid,currentConversation);
+                                    if(convid==currentConversation){
                                     return(
                                         <>
                                         <div className="max-w-[50%] text-white bg-gray-800 rounded-xl p-2 m-2">
@@ -199,7 +204,7 @@ const Dashboard=()=>{
                                         </div>
                                         <div ref={messageRef}></div>
                                         </>
-                                    )
+                                    )}
                                 }
                             }):<div className=" mt-3 pt-2 flex items-center justify-center bold text-xl ">No Messages yet..</div>
                         }
