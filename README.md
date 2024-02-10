@@ -6,7 +6,7 @@
 
 <img src="/client/src/assets/login-page.png" alt="project-screenshot">
 </br>
-<img src="/client/src/assets/dashboard-page.png" alt="project-screenshot">
+<img src="/client/src/assets/dashboard--page.png" alt="project-screenshot">
 
   
   
