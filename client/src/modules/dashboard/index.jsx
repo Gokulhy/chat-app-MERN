@@ -94,10 +94,10 @@ const Dashboard=()=>{
                 'Content-Type':'application/json'
             },
         })
-        setConv(conversationId);
         const resdata=await res.json();
         console.log('resdata->>',resdata,"conversationId-",conversationId);
         if(resdata.length>0){
+            setConv(resdata[0].user?.convid);
             console.log('-',resdata[0].user?.convid,"-");
             setMessages({messages:resdata,user:receiver,conversationId:resdata[0].user?.convid});
         }
@@ -196,7 +196,7 @@ const Dashboard=()=>{
                                 }
                                 else{
                                     console.log("currrent---------->",convid,currentConversation);
-                                    if(convid==currentConversation){
+                                    if(convid==currentConversation || currentConversation=='new'){
                                     return(
                                         <>
                                         <div className="max-w-[50%] text-white bg-gray-800 rounded-xl p-2 m-2">
