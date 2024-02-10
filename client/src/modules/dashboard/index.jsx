@@ -97,6 +97,7 @@ const Dashboard=()=>{
         const resdata=await res.json();
         console.log('resdata->>',resdata,"conversationId-",conversationId);
         if(resdata.length>0){
+            //setting up the current conversation id
             setConv(resdata[0].user?.convid);
             console.log('-',resdata[0].user?.convid,"-");
             setMessages({messages:resdata,user:receiver,conversationId:resdata[0].user?.convid});
