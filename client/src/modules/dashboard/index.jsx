@@ -197,7 +197,7 @@ const Dashboard=()=>{
                                 }
                                 else{
                                     console.log("currrent---------->",convid,currentConversation);
-                                    if(convid==currentConversation || currentConversation=='new'){
+                                    if(convid==currentConversation){
                                     return(
                                         <>
                                         <div className="max-w-[50%] text-white bg-gray-800 rounded-xl p-2 m-2">
