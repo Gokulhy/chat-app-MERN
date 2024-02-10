@@ -4,9 +4,9 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="/client/src/assets/login-page.png" alt="project-screenshot" width="400" height="400/">
+<img src="/client/src/assets/login-page.png" alt="project-screenshot" width="800" height="400/">
 
-<img src="/client/src/assets/dashboard-page.png" alt="project-screenshot" width="400" height="400/">
+<img src="/client/src/assets/dashboard-page.png" alt="project-screenshot" width="800" height="400/">
 
   
   
