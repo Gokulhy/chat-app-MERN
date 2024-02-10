@@ -5,7 +5,7 @@
 <h2>Project Screenshots:</h2>
 
 <img src="/client/src/assets/login-page.png" alt="project-screenshot" width="700" height="400/">
-
+</br>
 <img src="/client/src/assets/dashboard-page.png" alt="project-screenshot" width="700" height="400/">
 
   
